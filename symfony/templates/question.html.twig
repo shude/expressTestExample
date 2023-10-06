@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>{{ question.questionText }}</h1>
+    {% for message in app.flashes('tip') %}
+        <div style="color: red">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div>
+        <form action="{{ path('app.answer') }}" method="post">
+            <input type="hidden" name="testId" value="{{ testId }}" />
+            <input type="hidden" name="questionId" value="{{ question.questionId }}">
+            {% for answer in answers %}
+            <div>
+                <input id="{{ 'qa' ~ answer.answerId }}" type="checkbox" value="{{ answer.answerId }}" name="answers[]" />
+                <label for="{{ 'qa' ~ answer.answerId }}">{{ answer.answerText }}</label>
+            </div>
+            {% endfor %}
+            <button style="margin-top: 2rem" type="submit">Ответить</button>
+        </form>
+    </div>
+{% endblock %}

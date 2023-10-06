@@ -1,0 +1,18 @@
+version: '3'
+services:
+  php:
+    build: ./docker/php
+    container_name: express_php
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./symfony:/app
+  pgdb:
+    image: postgres:14.0-alpine3.14
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 123123
+volumes:
+  pgdata:

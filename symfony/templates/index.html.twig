@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <ul>
+        {% for test in tests %}
+            <li>
+                {{ test.testName }}
+                <form action="{{ path('app.begin.test') }}" method="post">
+                    <input type="hidden" name="testId" value="{{ test.testId }}">
+                    <button type="submit">Пройти</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

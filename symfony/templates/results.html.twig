@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Результаты теста: {{ result.testName }}</h1>
+    <h2>Правильные ответы</h2>
+     {% for right in result.rightAnswers %}
+        <div>{{ right.questionText }}</div>
+     {% endfor %}
+
+    <h2>Неправильные ответы</h2>
+    {% for wrong in result.wrongAnswers %}
+        <div>{{ wrong.questionText }}</div>
+    {% endfor %}
+
+    <a href="{{ path('app.index') }}">Попробовать снова</a>
+{% endblock %}

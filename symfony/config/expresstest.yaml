@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  direct.answer.strategy:
+    class: App\ExpressTest\Loader\Answer\DirectAnswerStrategy
+  shuffle.answer.strategy:
+    class: App\ExpressTest\Loader\Answer\ShuffleAnswerStrategy
+  direct.question.strategy:
+    class: App\ExpressTest\Loader\Question\DirectQuestionStrategy
+  shuffle.question.strategy:
+    class: App\ExpressTest\Loader\Question\ShuffleQuestionStrategy
