@@ -4,7 +4,7 @@ com install
 up
 #Чуток подождать чтобы постгрес запустился
 sleep 5
-run d:d:c
+run d:d:c --if-not-exists
 migrate
 fixtures
 start-server

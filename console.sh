@@ -57,12 +57,12 @@ deb() {
 
 #Migrations
 migrate(){
-  "${dc[@]}" run --rm -e PHP_XDEBUG_MODE=off php bin/console doctrine:migrations:migrate "$@"
+  "${dc[@]}" run --rm -e PHP_XDEBUG_MODE=off php bin/console doctrine:migrations:migrate --no-interaction "$@"
 }
 
 #Fixture loader
 fixtures(){
-  "${dc[@]}" run --rm -e PHP_XDEBUG_MODE=off php bin/console doctrine:fixtures:load "$@"
+  "${dc[@]}" run --rm -e PHP_XDEBUG_MODE=off php bin/console doctrine:fixtures:load --no-interaction "$@"
 }
 
 #Server start
