@@ -3,7 +3,7 @@
 ## Установка и запуск Mac OS / Linux
 
 ```shell
-startup.sh
+./startup.sh
 ```
 
 ## Установка и и запуск Windows
